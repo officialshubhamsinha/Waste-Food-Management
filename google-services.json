@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "846960807647",
+    "firebase_url": "https://waste-food-management-93ce5-default-rtdb.firebaseio.com",
+    "project_id": "waste-food-management-93ce5",
+    "storage_bucket": "waste-food-management-93ce5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:846960807647:android:55d80c27c82c255a47236a",
+        "android_client_info": {
+          "package_name": "com.example.WasteFoodManagement"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "846960807647-hdan62l5kgc1bqm0m0r243r4ehackoah.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDx3ZeWHQOrSDBdgfpMHbS15fwJdU6AHDU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "846960807647-hdan62l5kgc1bqm0m0r243r4ehackoah.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
