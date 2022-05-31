@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -36,8 +37,8 @@ public class DonorAdapter extends FirebaseRecyclerAdapter<DonorList, DonorAdapte
         holder.description.setText(model.getQuantity());
         holder.author.setText(model.getUserName());
         holder.author2.setText(model.getNumber());
-        Double x = model.getX();
-        Double y = model.getY();
+//        Double x = model.getX();
+//        Double y = model.getY();
 
 
 
@@ -46,7 +47,7 @@ public class DonorAdapter extends FirebaseRecyclerAdapter<DonorList, DonorAdapte
 
 
 
-        holder.delete.setOnClickListener(new View.OnClickListener() {
+        holder.receive.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -90,6 +91,7 @@ public class DonorAdapter extends FirebaseRecyclerAdapter<DonorList, DonorAdapte
 
         TextView title,description,author,author2;
         ImageView delete,edit;
+        CardView receive;
 
 
 
@@ -102,7 +104,8 @@ public class DonorAdapter extends FirebaseRecyclerAdapter<DonorList, DonorAdapte
             description = itemView.findViewById(R.id.description);
             author = itemView.findViewById(R.id.author);
             author2 = itemView.findViewById(R.id.author2);
-            delete = itemView.findViewById(R.id.delete);
+//            delete = itemView.findViewById(R.id.delete);
+            receive = itemView.findViewById(R.id.receive);
 
 
 //            edit = itemView.findViewById(R.id.edit);

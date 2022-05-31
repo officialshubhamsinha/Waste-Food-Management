@@ -58,6 +58,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
         android:backgroundTint="#4CAF50"
+        android:bufferType="normal"
         android:text="LOG IN"
         android:textColor="#0C0505"
         android:textIsSelectable="false"
