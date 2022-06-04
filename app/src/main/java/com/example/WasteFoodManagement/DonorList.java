@@ -29,9 +29,7 @@ public class DonorList {
         return foodName;
     }
 
-    public void setFoodName(String foodName) {
-        this.foodName = foodName;
-    }
+    public void setFoodName(String foodName) {this.foodName = foodName;}
 
     public String getNumber() {
         return number;
@@ -41,9 +39,7 @@ public class DonorList {
         this.number = number;
     }
 
-    public String getQuantity() {
-        return quantity;
-    }
+    public String getQuantity() {return quantity;}
 
     public void setQuantity(String quantity) {
         this.quantity = quantity;
@@ -57,17 +53,13 @@ public class DonorList {
         this.userName = userName;
     }
 
-    public Double getX() {
-        return x;
-    }
+    public Double getX() {return x;}
 
     public void setX(Double x) {
         this.x = x;
     }
 
-    public Double getY() {
-        return y;
-    }
+    public Double getY() {return y;}
 
     public void setY(Double y) {
         this.y = y;

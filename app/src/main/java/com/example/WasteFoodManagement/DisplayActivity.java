@@ -69,11 +69,11 @@ public class DisplayActivity extends AppCompatActivity {
             }
         });
 
-//
-//                Intent intent = new Intent();
-//                intent.setAction(Intent.ACTION_VIEW);
-//                intent.setData(Uri.parse(address));
-//                startActivity(intent);
+
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(address));
+                startActivity(intent);
 
 
 
