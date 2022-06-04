@@ -19,7 +19,7 @@
 
 
         <LinearLayout
-            android:layout_width="52dp"
+            android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight="1"
@@ -52,8 +52,8 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="41dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
                 android:text="Number"
                 android:textColor="#000000"
@@ -63,14 +63,15 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="10dp"
+            android:layout_height="153dp"
             android:layout_weight="9"
+            android:layout_marginLeft="-15dp"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/title"
-                android:layout_width="253dp"
+                android:layout_width="272dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="Food Name"
@@ -80,7 +81,7 @@
 
             <TextView
                 android:id="@+id/description"
-                android:layout_width="252dp"
+                android:layout_width="271dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -92,7 +93,7 @@
 
             <TextView
                 android:id="@+id/author"
-                android:layout_width="260dp"
+                android:layout_width="271dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -104,7 +105,7 @@
 
             <TextView
                 android:id="@+id/author2"
-                android:layout_width="260dp"
+                android:layout_width="271dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -139,7 +140,7 @@
         android:layout_width="match_parent"
         android:layout_height="35dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="160dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
 
