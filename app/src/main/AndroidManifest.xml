@@ -21,7 +21,6 @@
         <activity
             android:name=".RetrieveListActivity"
             android:exported="false" />
-        <activity android:name=".DisplayActivity" />
         <activity android:name=".RecieveActivity" />
         <activity android:name=".DonateActivity" /><activity
             android:name=".RegisterActivity"
