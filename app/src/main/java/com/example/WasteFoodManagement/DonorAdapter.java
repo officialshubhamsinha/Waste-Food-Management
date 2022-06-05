@@ -24,6 +24,8 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,16 +33,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.FirebaseDatabase;
 
 
-public class DonorAdapter extends FirebaseRecyclerAdapter<DonorList, DonorAdapter.DonorViewHolder> {
-
-
-
+public class DonorAdapter extends FirebaseRecyclerAdapter <DonorList, DonorAdapter.DonorViewHolder>{
     Context context;
-    protected GoogleMap mGoogleMap;
-    protected LatLng mMapLocation;
-
-
-
 
     @RequiresApi(api = Build.VERSION_CODES.M)
 
@@ -50,6 +44,8 @@ public class DonorAdapter extends FirebaseRecyclerAdapter<DonorList, DonorAdapte
 
     @Override
     protected void onBindViewHolder(@NonNull DonorViewHolder holder, @SuppressLint("RecyclerView") int position, @NonNull DonorList model) {
+
+
 
         String key = getRef(position).getKey();
 
@@ -61,56 +57,32 @@ public class DonorAdapter extends FirebaseRecyclerAdapter<DonorList, DonorAdapte
 //        holder.check.setText(String.valueOf(model.getX())+","+String.valueOf(model.getY()));
 
 //retrieving google map co-ordinates :(
-        final String address = "geo:" + String.valueOf(model.getX()) + "," + String.valueOf(model.getY());
+//        final String address = "geo:" + String.valueOf(model.getX()) + "," + String.valueOf(model.getY());
+//        String address = "http://maps.google.com/maps?q=" + model.getX() + "," + model.getY() + "&iwloc=A&hl=es";
+        String address = "http://maps.google.com/maps?q=" + model.getX()  + "," + model.getY() + "&fov=90&heading=235&pitch=10&sensor=false";
+
+
 //
 
 
         context = holder.location.getContext();
 
         holder.location.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-//                updateMapContents();
                 Uri gmmIntentUri = Uri.parse(address);
-
                 Intent i = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-
-                i.setPackage("com.google.android.apps.maps");
-
-
-                Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(address));
-                context.startActivity(intent);
-//                context.startActivity(i);
-
-//                mGoogleMap.addMarker(new MarkerOptions().position(address));
-//                CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(address, 10f);
-//                mGoogleMap.moveCamera(cameraUpdate);
-//                if (model.getX() != null && model.getY() != null)
-//                {
-//
-//                    mGoogleMap2.addMarker(new MarkerOptions()
-//                            .position(new LatLng(model.getX(), model.getY())));
-//                    mGoogleMap2.moveCamera(CameraUpdateFactory.newLatLngZoom(
-//                            new LatLng(model.getX(), model.getY()), 10));
-//                }
+//                i.setPackage("com.google.android.apps.maps");
 
 
-//
-
-
-
+//                Intent intent = new Intent();
+//                intent.setAction(Intent.ACTION_VIEW);
+//                intent.setData(Uri.parse(address));
+//                context.startActivity(intent);
+                context.startActivity(i);
             }
-
-
         });
-
-
-
-
-
-
 
         holder.receive.setOnClickListener(new View.OnClickListener() {
 
@@ -130,9 +102,6 @@ public class DonorAdapter extends FirebaseRecyclerAdapter<DonorList, DonorAdapte
                             public void onComplete(@NonNull Task<Void> task) {
 
 
-
-
-
                             }
 
 
@@ -142,23 +111,10 @@ public class DonorAdapter extends FirebaseRecyclerAdapter<DonorList, DonorAdapte
 
     }
 
-    private void updateMapContents() {
-
-
-        mGoogleMap.clear();
-        // Update the mapView feature data and camera position.
-        mGoogleMap.addMarker(new MarkerOptions().position(mMapLocation));
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(mMapLocation, 10f);
-        mGoogleMap.moveCamera(cameraUpdate);
-
-
-    }
-
 
     @NonNull
     @Override
     public DonorViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-
 
 
         View view = LayoutInflater.from(parent.getContext())
@@ -167,6 +123,8 @@ public class DonorAdapter extends FirebaseRecyclerAdapter<DonorList, DonorAdapte
 
 
     }
+
+
 
     class DonorViewHolder extends RecyclerView.ViewHolder {
 
@@ -195,16 +153,6 @@ public class DonorAdapter extends FirebaseRecyclerAdapter<DonorList, DonorAdapte
 
         }
 
-
-        public void setMapLocation(Double x, Double y) {
-
-            mMapLocation = new LatLng(x, y);
-
-            if (mGoogleMap != null) {
-                updateMapContents();
-
-            }
-        }
     }
 
 
